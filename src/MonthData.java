@@ -25,10 +25,11 @@ public class MonthData {
 
     int bestSeries(int goalByStepsPerDay) {
         int currentSeries = 0, finalSeries = 0;
-        for (int stepsPerDay : days) {
-            if (stepsPerDay >= goalByStepsPerDay) {
+        for (int i = 0; i < days.length; i++) {
+            if (days[i] >= goalByStepsPerDay) {
                 currentSeries++;
-            } else {
+            }
+            if (days[i] < goalByStepsPerDay || (days[i] >= goalByStepsPerDay && i == days.length - 1)) {
                 if (currentSeries > finalSeries) {
                     finalSeries = currentSeries;
                     currentSeries = 0;
@@ -36,5 +37,9 @@ public class MonthData {
             }
         }
         return finalSeries;
+    }
+
+    int averageSteps(int sumSteps) {
+        return sumSteps / days.length;
     }
 }

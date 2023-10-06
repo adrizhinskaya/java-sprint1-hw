@@ -1,9 +1,11 @@
 public class Converter {
+    static final double STEP_LENGTH_KM = 0.00075;
+    static final double STEP_WASTE_KKAL = 0.05;
     int convertToKm(int steps) {
-        return (int) (0.75 * steps / 1000);
+        return (int) (STEP_LENGTH_KM * steps);
     }
 
     int convertStepsToKilocalories(int steps) {
-        return steps * 50 / 1000;
+        return (int) (steps * STEP_WASTE_KKAL);
     }
 }
