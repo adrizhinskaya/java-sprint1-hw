@@ -33,7 +33,6 @@ public class MonthData {
                 }
             }
             if (day < goalByStepsPerDay) {
-                finalSeries = currentSeries;
                 currentSeries = 0;
             }
         }
